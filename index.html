@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>2FA Authenticator Setup</title>
+  <title>ChronosAuth Setup</title>
   <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -318,11 +318,11 @@
     </div>
   </div>
   <canvas id="camera-canvas"></canvas>
-  <p id="scan-status">Point your camera at an authenticator QR code</p>
-  <button id="start-scan-btn" onclick="startScan()">Start Camera</button>
+  <p id="scan-status">Scan Authenticator QR Code</p>
+  <button id="start-scan-btn" onclick="startScan()">Camera</button>
 
   <div id="qr-preview" class="preview-box">
-    <div class="preview-label">Account detected</div>
+    <div class="preview-label">Account found</div>
     <div id="qr-account-name" style="font-size:16px; font-weight:600; margin-bottom:8px;"></div>
     <div class="preview-label">Test code</div>
     <div class="preview-code" id="qr-code-preview">------</div>
@@ -478,7 +478,7 @@ function startScan() {
       container.style.display = 'block';
       btn.textContent = 'Stop Camera';
       btn.onclick = stopScan;
-      status.textContent = 'Scanning... point at a 2FA QR code';
+      status.textContent = 'Scanning... scan a 2FA QR code';
       status.className = '';
       scanLoop = setInterval(scanFrame, 200);
     })
